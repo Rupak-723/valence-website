@@ -183,14 +183,7 @@ export default function Activities() {
 
                 </h3>
 
-                {/* Subtitle */}
-
-                {activity.subtitle && (
-                  <p className="mt-3 text-sm leading-6 text-slate-400">
-                    {activity.subtitle}
-                  </p>
-                )}
-
+                
                 {/* Bottom */}
 
                 <div className="mt-10 flex items-center justify-between">
