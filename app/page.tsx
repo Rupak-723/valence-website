@@ -6,7 +6,7 @@ import Journals from "@/components/sections/Journals";
 import Activities from "@/components/sections/Activities";
 import ChemQuest from "@/components/sections/ChemQuest";
 import Team from "@/components/sections/Team";
-import Gallery from "@/components/section/Gallery";
+import Gallery from "@/components/sections/Gallery";
 
 export default function Home() {
   return (
