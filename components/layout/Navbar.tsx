@@ -246,3 +246,179 @@ export default function Navbar() {
     </motion.div>
   )}
 </AnimatePresence>
+      {/* ================= Contact Popup ================= */}
+
+<AnimatePresence>
+  {contactOpen && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 backdrop-blur-xl p-6"
+    >
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0.9,
+          y: 40,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        }}
+        exit={{
+          opacity: 0,
+          scale: 0.9,
+          y: 40,
+        }}
+        transition={{
+          duration: 0.35,
+        }}
+        className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900/95 shadow-2xl shadow-cyan-500/20"
+      >
+        {/* Decorative Glow */}
+        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
+
+        <div className="relative p-10">
+
+          {/* Header */}
+
+          <div className="flex items-center justify-between">
+
+            <div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="text-4xl font-black text-white"
+              >
+                Contact VALENCE
+              </motion.h2>
+
+              <p className="mt-2 text-slate-400">
+                We'd love to hear from you.
+              </p>
+
+            </div>
+
+            <motion.button
+              whileHover={{ rotate: 90 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setContactOpen(false)}
+              className="rounded-full bg-slate-800 p-3 transition hover:bg-slate-700"
+            >
+              <X className="h-5 w-5 text-white" />
+            </motion.button>
+
+          </div>
+
+          {/* Contact Cards */}
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+
+            {/* Email */}
+
+            <motion.div
+              whileHover={{
+                y: -5,
+                scale: 1.02,
+              }}
+              className="rounded-2xl border border-white/10 bg-slate-800/60 p-6 backdrop-blur"
+            >
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500">
+                <Mail className="h-7 w-7 text-white" />
+              </div>
+
+              <h3 className="text-xl font-semibold text-white">
+                Email
+              </h3>
+
+              <a
+                href="mailto:valence@iiserkol.ac.in"
+                className="mt-3 block text-slate-300 transition hover:text-cyan-400"
+              >
+                valence@iiserkol.ac.in
+              </a>
+            </motion.div>
+
+            {/* Address */}
+
+            <motion.div
+              whileHover={{
+                y: -5,
+                scale: 1.02,
+              }}
+              className="rounded-2xl border border-white/10 bg-slate-800/60 p-6 backdrop-blur"
+            >
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500">
+                <MapPin className="h-7 w-7 text-white" />
+              </div>
+
+              <h3 className="text-xl font-semibold text-white">
+                Office
+              </h3>
+
+              <p className="mt-3 leading-7 text-slate-300">
+                Department of Chemical Sciences
+                <br />
+                IISER Kolkata
+                <br />
+                Mohanpur, Nadia
+                <br />
+                West Bengal – 741246
+                <br />
+                India
+              </p>
+            </motion.div>
+
+          </div>
+
+          {/* Google Map */}
+
+          <iframe
+            src="https://www.google.com/maps?q=IISER+Kolkata&output=embed"
+            loading="lazy"
+            className="mt-8 h-72 w-full rounded-2xl border border-white/10"
+          />
+
+          {/* Buttons */}
+
+          <div className="mt-8 flex flex-wrap gap-4">
+
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
+              href="mailto:valence@iiserkol.ac.in"
+              className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 font-semibold text-white shadow-lg shadow-cyan-500/30"
+            >
+              Send Email
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
+              href="https://maps.google.com/?q=IISER+Kolkata"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full border border-cyan-500/40 px-8 py-3 font-semibold text-cyan-300 hover:bg-cyan-500/10"
+            >
+              Open Google Maps
+
+              <ExternalLink size={18} />
+            </motion.a>
+
+          </div>
+
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+      {/* ================= End of Contact Popup ================= */}
+
+    </>
+  );
+}
