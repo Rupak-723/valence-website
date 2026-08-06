@@ -185,11 +185,11 @@ export default function Activities() {
 
                 {/* Subtitle */}
 
-                <p className="mt-3 text-sm leading-6 text-slate-400">
-
-                  {activity.subtitle}
-
-                </p>
+                {activity.subtitle && (
+                  <p className="mt-3 text-sm leading-6 text-slate-400">
+                    {activity.subtitle}
+                  </p>
+                )}
 
                 {/* Bottom */}
 
