@@ -323,39 +323,34 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-xl p-6"
+      className="fixed inset-0 z-[100] overflow-y-auto bg-black/70 backdrop-blur-xl"
     >
-      <motion.div
-        initial={{
-          opacity: 0,
-          scale: 0.9,
-          y: 40,
-        }}
-        animate={{
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          boxShadow: [
-            "0 0 30px rgba(6,182,212,0.15)",
-            "0 0 70px rgba(6,182,212,0.35)",
-            "0 0 30px rgba(6,182,212,0.15)",
-          ],
-        }}
-        exit={{
-          opacity: 0,
-          scale: 0.9,
-          y: 40,
-        }}
-        transition={{
-          duration: 0.35,
-          boxShadow: {
-            duration: 3,
-            repeat: Infinity,
-          },
-        }}
-        className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900/90"
-      >
+<div className="flex min-h-screen items-start justify-center py-10 px-6">
 
+  <motion.div
+    initial={{
+      opacity: 0,
+      scale: 0.9,
+      y: 40,
+    }}
+    animate={{
+      opacity: 1,
+      scale: 1,
+      y: 0,
+    }}
+    exit={{
+      opacity: 0,
+      scale: 0.9,
+      y: 40,
+    }}
+    transition={{
+      duration: 0.35,
+    }}
+    className="relative w-full max-w-3xl rounded-3xl border border-white/10 bg-slate-900/90"
+  >
+      </motion.div>
+
+</div>
         {/* Background Glow */}
 
         <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl" />
