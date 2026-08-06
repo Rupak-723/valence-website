@@ -19,6 +19,7 @@ export default function Home() {
       <Journals />
       <ChemQuest />
       <Team />
+      <Gallery />
     </>
   );
 }
